@@ -2,8 +2,8 @@
 //  CategoryViewController.swift
 //  Todoey
 //
-//  Created by Philipp Muellauer on 28/11/2019.
-//  Copyright © 2019 Philipp Muellauer. All rights reserved.
+//  Created by Bekzod Khaitboev on 10/04/2021
+//
 
 import UIKit
 import RealmSwift
@@ -13,8 +13,6 @@ class CategoryViewController: SwipeTableViewController {
     
     let realm = try! Realm()
     
-    // Potential namespace clash with OpaquePointer (same name of Category)
-    // Use correct type from dropdown or add backticks to fix e.g., var categories = [`Category`]()
     var categories: Results<Category>?
     
     override func viewDidLoad() {
@@ -111,7 +109,6 @@ class CategoryViewController: SwipeTableViewController {
             destinationVC.selectedCategory = categories?[indexPath.row]
         }
     }
-    
     
     
 }

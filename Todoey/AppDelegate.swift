@@ -2,9 +2,9 @@
 //  AppDelegate.swift
 //  Todoey
 //
-//  Created by Philipp Muellauer on 26/11/2019.
-//  Copyright © 2019 Philipp Muellauer. All rights reserved.
+//  Created by Bekzod Khaitboev on 10/04/2021
 //
+
 
 import UIKit
 import RealmSwift
@@ -19,12 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // print(Realm.Configuration.defaultConfiguration.fileURL)
         
         do {
-            let realm = try Realm()
+            _ = try Realm()
         } catch {
             print("Error initialising new realm, \(error)")
         }
-        
-        
         
         return true
     }
@@ -34,7 +32,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
 
-    
-    
-    
 }

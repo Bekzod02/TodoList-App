@@ -1,8 +1,7 @@
 //  ViewController.swift
 //  Todoey
 //
-//  Created by Philipp Muellauer on 26/11/2019.
-//  Copyright © 2019 Philipp Muellauer. All rights reserved.
+//  Created by Bekzod Khaitboev on 11/04/2021
 //
 
 import UIKit
@@ -33,8 +32,6 @@ class TodoListViewController: SwipeTableViewController {
             guard let navBar = navigationController?.navigationBar else { fatalError("Navigation controller does not exist.")
             }
             if let navBarColour = UIColor(hexString: colourHex) {
-                //Original setting: navBar.barTintColor = UIColor(hexString: colourHex)
-                //Revised for iOS13 w/ Prefer Large Titles setting:
                 navBar.backgroundColor = navBarColour
                 navBar.tintColor = ContrastColorOf(navBarColour, returnFlat: true)
                 searchBar.barTintColor = navBarColour
@@ -70,7 +67,6 @@ class TodoListViewController: SwipeTableViewController {
         if let item = toDoItems?[indexPath.row] {
             do {
                 try realm.write{
-                    // realm.delete(item)
                     item.done = !item.done
                 }
             } catch {
@@ -145,7 +141,5 @@ extension TodoListViewController: UISearchBarDelegate{
             }
         }
     }
-    
-    
     
 }

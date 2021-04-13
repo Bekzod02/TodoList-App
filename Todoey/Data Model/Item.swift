@@ -2,8 +2,7 @@
 //  Item.swift
 //  Todoey
 //
-//  Created by Philipp Muellauer on 29/11/2019.
-//  Copyright © 2019 Philipp Muellauer. All rights reserved.
+//  Created by Bekzod Khaitboev on 10/04/2021
 //
 
 import Foundation
@@ -13,5 +12,6 @@ class Item: Object {
     @objc dynamic var title: String = ""
     @objc dynamic var done: Bool = false
     @objc dynamic var dateCreated: Date?
+    
     var parentCategory = LinkingObjects(fromType: Category.self, property: "items")
 }
